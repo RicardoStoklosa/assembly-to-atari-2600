@@ -14,10 +14,11 @@ Start:
 
     lda #0          ; A = 0
     ldx #$FF        ; X = #$FF
+    sta $FF
 
 MemLoop:
-    sta $0,X        ; store zero at $0 + X
     dex             ; x--
+    sta $0,X        ; store zero at $0 + X
     bne MemLoop     ; loop until x==0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
